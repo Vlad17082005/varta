@@ -1,0 +1,167 @@
+.page {
+  padding: var(--space-3xl) 0;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: var(--space-3xl);
+}
+
+.headerSub {
+  color: var(--color-text-secondary);
+  font-size: 1.05rem;
+  max-width: 550px;
+  margin: 0 auto;
+}
+
+/* Ingredient base section */
+.ingredientSection {
+  margin-bottom: var(--space-3xl);
+}
+
+.ingredientTitle {
+  font-family: var(--font-display);
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin-bottom: var(--space-lg);
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+}
+
+.ingredientGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: var(--space-md);
+}
+
+.ingredientCard {
+  padding: var(--space-lg);
+  text-align: center;
+}
+
+.ingredientEmoji {
+  font-size: 2rem;
+  margin-bottom: var(--space-sm);
+}
+
+.ingredientName {
+  font-weight: 600;
+  font-size: 0.9rem;
+  margin-bottom: 2px;
+}
+
+.ingredientType {
+  font-size: 0.78rem;
+  color: var(--color-text-muted);
+}
+
+/* Product grid */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: var(--space-xl);
+  margin-top: var(--space-2xl);
+}
+
+/* Detailed product card */
+.productDetail {
+  position: relative;
+  overflow: hidden;
+  padding: var(--space-xl);
+}
+
+.productGlow {
+  position: absolute;
+  top: -40px;
+  right: -40px;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  filter: blur(50px);
+  opacity: 0.15;
+  pointer-events: none;
+}
+
+.productEmoji {
+  font-size: 3.5rem;
+  margin-bottom: var(--space-md);
+  display: inline-block;
+  animation: float 3s ease-in-out infinite;
+}
+
+.productName {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: var(--space-xs);
+}
+
+.productTagline {
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: var(--space-md);
+}
+
+.productDesc {
+  font-size: 0.9rem;
+  color: var(--color-text-secondary);
+  line-height: 1.7;
+  margin-bottom: var(--space-lg);
+}
+
+.productIngredients {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-sm);
+  margin-bottom: var(--space-lg);
+}
+
+.productIngredients span {
+  padding: 0.3rem 0.75rem;
+  border-radius: var(--radius-full);
+  font-size: 0.78rem;
+  font-weight: 500;
+  border: 1px solid var(--color-border);
+  background: var(--color-bg-card);
+  color: var(--color-text-secondary);
+}
+
+.productBenefit {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  font-size: 0.85rem;
+  color: var(--color-gold);
+  margin-bottom: var(--space-lg);
+  font-weight: 500;
+}
+
+.productFooter {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.productPrice {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.productPricePer {
+  font-size: 0.78rem;
+  color: var(--color-text-muted);
+  font-weight: 400;
+}
+
+@media (max-width: 768px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+  .ingredientGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
