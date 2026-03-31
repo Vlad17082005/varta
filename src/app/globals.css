@@ -1,47 +1,46 @@
-/* ===== DESIGN SYSTEM — Daily Boost ===== */
-
-/* --- Google Font (loaded via next/font in layout) --- */
+/* ===== DESIGN SYSTEM — Varta Bio-Hack ===== */
 
 :root {
-  /* Brand palette — Honey / Gold / Warm */
-  --color-bg: #0c0a09;
-  --color-bg-alt: #1a1714;
-  --color-bg-card: rgba(255, 255, 255, 0.04);
-  --color-surface: #231f1b;
-  --color-border: rgba(255, 193, 68, 0.12);
-  --color-border-hover: rgba(255, 193, 68, 0.3);
+  /* Brand palette — Premium Dark / Muted Gold */
+  --color-bg: #060606;
+  --color-bg-alt: #0d0b0a;
+  --color-bg-card: rgba(255, 255, 255, 0.025);
+  --color-surface: #141210;
+  --color-border: rgba(180, 140, 90, 0.15);
+  --color-border-hover: rgba(180, 140, 90, 0.35);
 
-  --color-gold: #ffc144;
-  --color-gold-light: #ffd97a;
-  --color-gold-dark: #d9952a;
-  --color-honey: #f5a623;
-  --color-amber: #f59e0b;
+  --color-gold: #b8956a;
+  --color-gold-light: #d4b896;
+  --color-gold-dark: #8a6d4a;
+  --color-honey: #a07d55;
+  --color-amber: #c49a5c;
 
-  --color-text: #faf5ef;
-  --color-text-secondary: #b8a994;
-  --color-text-muted: #7a6e62;
+  --color-text: #ede8e3;
+  --color-text-secondary: #9a8e82;
+  --color-text-muted: #5e554c;
 
-  --color-accent-red: #ef4444;
-  --color-accent-pink: #f472b6;
-  --color-accent-orange: #fb923c;
-  --color-accent-green: #4ade80;
-  --color-accent-purple: #a78bfa;
+  --color-accent-red: #c44040;
+  --color-accent-pink: #d48fa0;
+  --color-accent-orange: #c48a50;
+  --color-accent-green: #6abf7b;
+  --color-accent-purple: #9b7fc4;
+  --color-accent-blue: #5da0c9;
 
   /* Gradients */
-  --gradient-hero: linear-gradient(135deg, #1a1209 0%, #0c0a09 40%, #0f1117 100%);
+  --gradient-hero: linear-gradient(180deg, #0a0908 0%, #060606 50%, #080706 100%);
   --gradient-gold: linear-gradient(135deg, var(--color-gold-dark), var(--color-gold), var(--color-gold-light));
-  --gradient-card: linear-gradient(145deg, rgba(255,193,68,0.06), rgba(255,255,255,0.02));
+  --gradient-card: linear-gradient(145deg, rgba(180,140,90,0.04), rgba(255,255,255,0.015));
 
   /* Shadows */
-  --shadow-sm: 0 1px 2px rgba(0,0,0,.4);
-  --shadow-md: 0 4px 14px rgba(0,0,0,.5);
-  --shadow-lg: 0 10px 40px rgba(0,0,0,.6);
-  --shadow-gold: 0 0 30px rgba(255,193,68,0.15);
-  --shadow-glow: 0 0 60px rgba(255,193,68,0.08);
+  --shadow-sm: 0 1px 2px rgba(0,0,0,.5);
+  --shadow-md: 0 4px 14px rgba(0,0,0,.6);
+  --shadow-lg: 0 10px 40px rgba(0,0,0,.7);
+  --shadow-gold: 0 0 30px rgba(180,140,90,0.1);
+  --shadow-glow: 0 0 60px rgba(180,140,90,0.06);
 
   /* Typography */
   --font-sans: var(--font-inter), system-ui, -apple-system, sans-serif;
-  --font-display: var(--font-outfit), var(--font-sans);
+  --font-display: var(--font-playfair), 'Playfair Display', Georgia, 'Times New Roman', serif;
 
   /* Spacing */
   --space-xs: 0.25rem;
@@ -54,10 +53,10 @@
   --space-4xl: 6rem;
 
   /* Borders */
-  --radius-sm: 8px;
-  --radius-md: 12px;
-  --radius-lg: 16px;
-  --radius-xl: 24px;
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 14px;
+  --radius-xl: 20px;
   --radius-full: 9999px;
 
   /* Transitions */
@@ -68,7 +67,7 @@
 
   /* Layout */
   --max-width: 1200px;
-  --nav-height: 72px;
+  --nav-height: 64px;
 }
 
 /* === RESET === */
@@ -130,30 +129,29 @@ ul, ol {
 .section-title {
   font-family: var(--font-display);
   font-size: clamp(2rem, 5vw, 3rem);
-  font-weight: 700;
+  font-weight: 400;
+  font-style: italic;
   text-align: center;
   margin-bottom: var(--space-md);
-  background: var(--gradient-gold);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  color: var(--color-gold);
 }
 
 .section-subtitle {
   text-align: center;
   color: var(--color-text-secondary);
-  font-size: 1.1rem;
+  font-size: 1rem;
   max-width: 600px;
   margin: 0 auto var(--space-3xl);
+  letter-spacing: 0.01em;
 }
 
 /* Glass card */
 .glass-card {
   background: var(--gradient-card);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
   border: 1px solid var(--color-border);
-  border-radius: var(--radius-lg);
+  border-radius: var(--radius-md);
   transition: border-color var(--duration-normal) var(--ease-out),
               box-shadow var(--duration-normal) var(--ease-out),
               transform var(--duration-normal) var(--ease-out);
@@ -171,40 +169,41 @@ ul, ol {
   align-items: center;
   justify-content: center;
   gap: var(--space-sm);
-  padding: 0.75rem 1.75rem;
-  border-radius: var(--radius-full);
-  font-weight: 600;
-  font-size: 0.95rem;
-  letter-spacing: 0.01em;
+  padding: 0.7rem 1.6rem;
+  border-radius: var(--radius-sm);
+  font-weight: 500;
+  font-size: 0.88rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
   transition: all var(--duration-normal) var(--ease-out);
   white-space: nowrap;
 }
 
 .btn-primary {
   background: var(--gradient-gold);
-  color: #0c0a09;
-  box-shadow: 0 4px 20px rgba(255,193,68,0.3);
+  color: #060606;
+  box-shadow: 0 4px 20px rgba(180,140,90,0.2);
 }
 
 .btn-primary:hover {
   transform: translateY(-2px);
-  box-shadow: 0 8px 30px rgba(255,193,68,0.45);
+  box-shadow: 0 8px 30px rgba(180,140,90,0.35);
 }
 
 .btn-secondary {
   background: transparent;
   color: var(--color-gold);
-  border: 1.5px solid var(--color-gold);
+  border: 1px solid var(--color-gold);
 }
 
 .btn-secondary:hover {
-  background: rgba(255,193,68,0.1);
+  background: rgba(180,140,90,0.08);
   transform: translateY(-1px);
 }
 
 .btn-sm {
-  padding: 0.5rem 1.25rem;
-  font-size: 0.875rem;
+  padding: 0.45rem 1rem;
+  font-size: 0.8rem;
 }
 
 /* === ANIMATIONS === */
@@ -231,12 +230,12 @@ ul, ol {
 
 @keyframes float {
   0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-8px); }
+  50% { transform: translateY(-6px); }
 }
 
 @keyframes pulse-glow {
-  0%, 100% { box-shadow: 0 0 20px rgba(255,193,68,0.15); }
-  50% { box-shadow: 0 0 40px rgba(255,193,68,0.3); }
+  0%, 100% { box-shadow: 0 0 20px rgba(180,140,90,0.1); }
+  50% { box-shadow: 0 0 40px rgba(180,140,90,0.2); }
 }
 
 @keyframes spin-slow {
@@ -262,7 +261,7 @@ ul, ol {
 
 /* Scrollbar */
 ::-webkit-scrollbar {
-  width: 8px;
+  width: 6px;
 }
 
 ::-webkit-scrollbar-track {
@@ -280,6 +279,28 @@ ul, ol {
 
 /* Selection */
 ::selection {
-  background: rgba(255,193,68,0.3);
+  background: rgba(180,140,90,0.25);
   color: var(--color-text);
+}
+
+/* Gold divider line utility */
+.gold-divider {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  justify-content: center;
+  margin: var(--space-xl) 0;
+  color: var(--color-text-muted);
+  font-size: 0.78rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+.gold-divider::before,
+.gold-divider::after {
+  content: '';
+  width: 60px;
+  height: 1px;
+  background: var(--color-gold);
+  opacity: 0.5;
 }

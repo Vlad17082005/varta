@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Icon from '@/components/Icon';
 import styles from './Footer.module.css';
 
 export default function Footer() {
@@ -7,7 +8,8 @@ export default function Footer() {
       <div className={styles.footerInner}>
         <div className={styles.brand}>
           <div className={styles.brandLogo}>
-            🍯 Daily<span className={styles.brandLogoAccent}>Boost</span>
+            <Icon name="honey" size={18} color="var(--color-gold)" />
+            {' '}Daily<span className={styles.brandLogoAccent}>Boost</span>
           </div>
           <p>
             Instant Shield. Natural Energy. Real honey &amp; superfood
@@ -42,9 +44,15 @@ export default function Footer() {
       <div className={styles.bottom}>
         <span>&copy; {new Date().getFullYear()} DailyBoost. All rights reserved.</span>
         <div className={styles.socials}>
-          <a href="#" aria-label="TikTok">🎵</a>
-          <a href="#" aria-label="Instagram">📸</a>
-          <a href="#" aria-label="Twitter">𝕏</a>
+          <a href="#" aria-label="TikTok">
+            <Icon name="video" size={16} color="var(--color-text-secondary)" />
+          </a>
+          <a href="#" aria-label="Instagram">
+            <Icon name="phone" size={16} color="var(--color-text-secondary)" />
+          </a>
+          <a href="#" aria-label="Twitter">
+            <Icon name="target" size={16} color="var(--color-text-secondary)" />
+          </a>
         </div>
       </div>
     </footer>

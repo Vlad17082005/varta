@@ -1,5 +1,6 @@
 'use client';
 
+import Image from 'next/image';
 import { useCart } from '@/context/CartContext';
 import type { Product } from '@/data/products';
 import styles from './ProductCard.module.css';
@@ -23,7 +24,13 @@ export default function ProductCard({ product }: { product: Product }) {
       <div className={styles.cardGlow} style={{ background: product.color }} />
 
       <div className={styles.imageWrap}>
-        <span className={styles.imagePlaceholder}>{product.emoji}</span>
+        <Image
+          src={`/products/${product.id}.png`}
+          alt={product.name}
+          fill
+          sizes="(max-width: 768px) 100vw, 240px"
+          style={{ objectFit: 'cover' }}
+        />
       </div>
 
       <span className={styles.tagline} style={{ color: product.color }}>

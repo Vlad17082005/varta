@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { products } from '@/data/products';
 import ProductCard from '@/components/ProductCard';
+import Icon from '@/components/Icon';
 import styles from './page.module.css';
 
 export default function Home() {
@@ -13,7 +14,7 @@ export default function Home() {
 
         <div className={styles.heroContent}>
           <div className={`${styles.heroBadge} animate-fade-in`}>
-            🍯 100% Natural Honey Concentrates
+            <Icon name="honey" size={14} color="var(--color-gold)" /> 100% Natural Honey Concentrates
           </div>
 
           <h1 className={`${styles.heroTitle} animate-fade-in-up delay-1`}>
@@ -48,23 +49,25 @@ export default function Home() {
           <div className={styles.steps}>
             {[
               {
-                icon: '✂️',
+                icon: 'scissors' as const,
                 title: 'Tear',
                 desc: 'Rip open the stick pack along the perforation — no scissors needed.',
               },
               {
-                icon: '🫗',
+                icon: 'pour' as const,
                 title: 'Pour',
                 desc: 'Squeeze the thick honey concentrate into your favourite cup.',
               },
               {
-                icon: '☕',
+                icon: 'cup' as const,
                 title: 'Drink',
                 desc: 'Add hot water, stir, and enjoy a powerful vitamin-packed drink.',
               },
             ].map((s, i) => (
               <div className={styles.step} key={i}>
-                <div className={styles.stepIcon}>{s.icon}</div>
+                <div className={styles.stepIcon}>
+                  <Icon name={s.icon} size={28} color="var(--color-gold)" />
+                </div>
                 <span className={styles.stepNum}>{i + 1}</span>
                 <h3 className={styles.stepTitle}>{s.title}</h3>
                 <p className={styles.stepDesc}>{s.desc}</p>
@@ -86,28 +89,30 @@ export default function Home() {
           <div className={styles.features}>
             {[
               {
-                icon: '🌿',
+                icon: 'leaf' as const,
                 title: '100% Natural',
                 desc: 'Real honey, real fruit, real spices — zero artificial additives, colours, or preservatives.',
               },
               {
-                icon: '💪',
+                icon: 'strength' as const,
                 title: 'Truly Effective',
                 desc: 'Thick concentrate preserves vitamins far better than dry powders or pills.',
               },
               {
-                icon: '⚡',
+                icon: 'lightning' as const,
                 title: 'Clean Energy',
                 desc: 'Natural glucose from honey plus bee pollen bio-stimulants — no sugar crash.',
               },
               {
-                icon: '🎒',
+                icon: 'backpack' as const,
                 title: 'Ultra Portable',
                 desc: 'Fits in your pocket. No need to carry separate honey, lemon, or ginger.',
               },
             ].map((f, i) => (
               <div className={`glass-card ${styles.feature}`} key={i}>
-                <div className={styles.featureIcon}>{f.icon}</div>
+                <div className={styles.featureIcon}>
+                  <Icon name={f.icon} size={32} color="var(--color-gold)" />
+                </div>
                 <h3 className={styles.featureTitle}>{f.title}</h3>
                 <p className={styles.featureDesc}>{f.desc}</p>
               </div>
@@ -127,23 +132,25 @@ export default function Home() {
           <div className={styles.cases}>
             {[
               {
-                emoji: '🏢',
+                icon: 'building' as const,
                 title: 'Long Shifts at Work',
                 desc: 'When your focus drops after hours at the desk, a DailyBoost stick brings you back without the jitters of another espresso.',
               },
               {
-                emoji: '🤧',
+                icon: 'shield' as const,
                 title: 'Cold & Flu Season',
                 desc: 'Feel a cold creeping in? Grab a C-Bomb or Pink Power for a natural, fast-acting immune response.',
               },
               {
-                emoji: '💊',
+                icon: 'pill' as const,
                 title: 'Hate Swallowing Pills?',
                 desc: 'Replace your morning vitamin routine with a delicious warm drink that delivers the same nutrients.',
               },
             ].map((c, i) => (
               <div className={`glass-card ${styles.case}`} key={i}>
-                <div className={styles.caseEmoji}>{c.emoji}</div>
+                <div className={styles.caseEmoji}>
+                  <Icon name={c.icon} size={32} color="var(--color-gold)" />
+                </div>
                 <h3 className={styles.caseTitle}>{c.title}</h3>
                 <p className={styles.caseDesc}>{c.desc}</p>
               </div>
@@ -184,13 +191,15 @@ export default function Home() {
 
           <div className={styles.channelGrid}>
             {[
-              { icon: '⛽', name: 'Gas Stations', sub: 'Shell, BP & more' },
-              { icon: '☕', name: 'Coffee Shops', sub: 'Perfect add-on to your order' },
-              { icon: '🛒', name: 'Supermarkets', sub: 'Checkout zone impulse buy' },
-              { icon: '🏢', name: 'Office Vending', sub: 'In your building lobby' },
+              { icon: 'fuel' as const, name: 'Gas Stations', sub: 'Shell, BP & more' },
+              { icon: 'coffee' as const, name: 'Coffee Shops', sub: 'Perfect add-on to your order' },
+              { icon: 'cart' as const, name: 'Supermarkets', sub: 'Checkout zone impulse buy' },
+              { icon: 'vending' as const, name: 'Office Vending', sub: 'In your building lobby' },
             ].map((ch, i) => (
               <div className={`glass-card ${styles.channel}`} key={i}>
-                <div className={styles.channelIcon}>{ch.icon}</div>
+                <div className={styles.channelIcon}>
+                  <Icon name={ch.icon} size={24} color="var(--color-gold)" />
+                </div>
                 <div className={styles.channelName}>{ch.name}</div>
                 <div className={styles.channelSub}>{ch.sub}</div>
               </div>

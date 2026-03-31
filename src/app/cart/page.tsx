@@ -1,8 +1,9 @@
 'use client';
 
 import Link from 'next/link';
+import Image from 'next/image';
 import { useCart } from '@/context/CartContext';
-import { products } from '@/data/products';
+import Icon from '@/components/Icon';
 import styles from './page.module.css';
 
 export default function CartPage() {
@@ -14,7 +15,9 @@ export default function CartPage() {
       <div className={styles.page}>
         <div className="container">
           <div className={styles.empty}>
-            <div className={styles.emptyIcon}>🛒</div>
+            <div className={styles.emptyIcon}>
+              <Icon name="cart-empty" size={56} color="var(--color-text-muted)" />
+            </div>
             <h1 className={styles.emptyTitle}>Your cart is empty</h1>
             <p className={styles.emptySub}>
               Looks like you haven&apos;t added any DailyBoost sticks yet.
@@ -42,12 +45,17 @@ export default function CartPage() {
           {/* Items */}
           <div className={styles.items}>
             {items.map((item) => {
-              const productData = products.find((p) => p.id === item.id);
-              const emoji = productData?.emoji || '🍯';
-
               return (
                 <div className={`glass-card ${styles.item}`} key={item.id}>
-                  <div className={styles.itemEmoji}>{emoji}</div>
+                  <div className={styles.itemEmoji}>
+                    <Image
+                      src={`/products/${item.id}.png`}
+                      alt={item.name}
+                      width={48}
+                      height={48}
+                      style={{ objectFit: 'cover', borderRadius: '4px' }}
+                    />
+                  </div>
 
                   <div className={styles.itemInfo}>
                     <div className={styles.itemName}>{item.name}</div>

@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { products } from '@/data/products';
 import ProductsClient from './ProductsClient';
+import Icon from '@/components/Icon';
 import styles from './page.module.css';
 
 export const metadata: Metadata = {
@@ -10,26 +11,26 @@ export const metadata: Metadata = {
 };
 
 const BASE_INGREDIENTS = [
-  { emoji: '🍯', name: 'Acacia Honey', type: 'Base' },
-  { emoji: '🍯', name: 'Rapeseed Honey', type: 'Base' },
-  { emoji: '🍏', name: 'Apple Pectin', type: 'Binder' },
-  { emoji: '🍋', name: 'Lemon Jam', type: 'Base' },
+  { icon: 'honey' as const, name: 'Acacia Honey', type: 'Base' },
+  { icon: 'honey' as const, name: 'Rapeseed Honey', type: 'Base' },
+  { icon: 'leaf' as const, name: 'Apple Pectin', type: 'Binder' },
+  { icon: 'jar' as const, name: 'Lemon Jam', type: 'Base' },
 ];
 
 const FRUITS = [
-  { emoji: '🫐', name: 'Sea Buckthorn', type: 'Berry' },
-  { emoji: '🍊', name: 'Orange', type: 'Citrus' },
-  { emoji: '🍒', name: 'Raspberry', type: 'Berry' },
-  { emoji: '🌹', name: 'Rosehip', type: 'Berry' },
-  { emoji: '🫐', name: 'Black Currant', type: 'Berry' },
-  { emoji: '🍋', name: 'Cranberry', type: 'Berry' },
+  { icon: 'berry' as const, name: 'Sea Buckthorn', type: 'Berry' },
+  { icon: 'berry' as const, name: 'Orange', type: 'Citrus' },
+  { icon: 'berry' as const, name: 'Raspberry', type: 'Berry' },
+  { icon: 'berry' as const, name: 'Rosehip', type: 'Berry' },
+  { icon: 'berry' as const, name: 'Black Currant', type: 'Berry' },
+  { icon: 'berry' as const, name: 'Cranberry', type: 'Berry' },
 ];
 
 const SPICES = [
-  { emoji: '🫚', name: 'Ginger Root', type: 'Spice' },
-  { emoji: '🌿', name: 'Cinnamon', type: 'Spice' },
-  { emoji: '🌺', name: 'Clove', type: 'Spice' },
-  { emoji: '🌱', name: 'Mint', type: 'Herb' },
+  { icon: 'plant' as const, name: 'Ginger Root', type: 'Spice' },
+  { icon: 'leaf' as const, name: 'Cinnamon', type: 'Spice' },
+  { icon: 'plant' as const, name: 'Clove', type: 'Spice' },
+  { icon: 'leaf' as const, name: 'Mint', type: 'Herb' },
 ];
 
 export default function ProductsPage() {
@@ -46,7 +47,9 @@ export default function ProductsPage() {
 
         {/* Ingredient showcase */}
         <div className={styles.ingredientSection}>
-          <h2 className={styles.ingredientTitle}>🧪 Our Ingredients</h2>
+          <h2 className={styles.ingredientTitle}>
+            <Icon name="lab" size={20} color="var(--color-gold)" /> Our Ingredients
+          </h2>
 
           <h3 className={styles.ingredientTitle} style={{ fontSize: '1rem', color: 'var(--color-gold)' }}>
             Base
@@ -54,7 +57,9 @@ export default function ProductsPage() {
           <div className={styles.ingredientGrid}>
             {BASE_INGREDIENTS.map((ing) => (
               <div className={`glass-card ${styles.ingredientCard}`} key={ing.name}>
-                <div className={styles.ingredientEmoji}>{ing.emoji}</div>
+                <div className={styles.ingredientEmoji}>
+                  <Icon name={ing.icon} size={28} color="var(--color-gold)" />
+                </div>
                 <div className={styles.ingredientName}>{ing.name}</div>
                 <div className={styles.ingredientType}>{ing.type}</div>
               </div>
@@ -70,7 +75,9 @@ export default function ProductsPage() {
           <div className={styles.ingredientGrid}>
             {FRUITS.map((ing) => (
               <div className={`glass-card ${styles.ingredientCard}`} key={ing.name}>
-                <div className={styles.ingredientEmoji}>{ing.emoji}</div>
+                <div className={styles.ingredientEmoji}>
+                  <Icon name={ing.icon} size={28} color="var(--color-accent-pink)" />
+                </div>
                 <div className={styles.ingredientName}>{ing.name}</div>
                 <div className={styles.ingredientType}>{ing.type}</div>
               </div>
@@ -86,7 +93,9 @@ export default function ProductsPage() {
           <div className={styles.ingredientGrid}>
             {SPICES.map((ing) => (
               <div className={`glass-card ${styles.ingredientCard}`} key={ing.name}>
-                <div className={styles.ingredientEmoji}>{ing.emoji}</div>
+                <div className={styles.ingredientEmoji}>
+                  <Icon name={ing.icon} size={28} color="var(--color-accent-orange)" />
+                </div>
                 <div className={styles.ingredientName}>{ing.name}</div>
                 <div className={styles.ingredientType}>{ing.type}</div>
               </div>

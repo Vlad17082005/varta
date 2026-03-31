@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useState } from 'react';
 import { useCart } from '@/context/CartContext';
+import Icon from '@/components/Icon';
 import styles from './Navbar.module.css';
 
 const NAV_LINKS = [
@@ -22,7 +23,9 @@ export default function Navbar() {
     <nav className={styles.nav}>
       <div className={styles.navInner}>
         <Link href="/" className={styles.logo}>
-          <span className={styles.logoIcon}>🍯</span>
+          <span className={styles.logoIcon}>
+            <Icon name="honey" size={18} color="var(--color-gold)" />
+          </span>
           Daily<span className={styles.logoAccent}>Boost</span>
         </Link>
 
@@ -43,7 +46,7 @@ export default function Navbar() {
 
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
           <Link href="/cart" className={styles.cartBtn} aria-label="Cart">
-            🛒
+            <Icon name="cart" size={18} color="var(--color-text-secondary)" />
             {totalItems > 0 && (
               <span className={styles.cartBadge}>{totalItems}</span>
             )}

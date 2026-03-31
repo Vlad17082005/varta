@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import Icon from '@/components/Icon';
 import styles from './page.module.css';
 
 export const metadata: Metadata = {
@@ -9,31 +10,31 @@ export const metadata: Metadata = {
 
 const STEPS = [
   {
-    icon: '🐝',
+    icon: 'bee' as const,
     title: 'Sourcing the Finest Honey',
     desc: 'We partner with local beekeepers to source premium acacia and rapeseed honey. Every batch is lab-tested to ensure it\'s raw, unprocessed, and rich in natural enzymes.',
     details: ['Acacia Honey', 'Rapeseed Honey', 'Lab-Tested Purity', 'No Heating'],
   },
   {
-    icon: '🍓',
+    icon: 'berry' as const,
     title: 'Selecting Superfoods',
     desc: 'Only the best berries, citrus, and spices make it into our blends. We use freeze-dried and cold-pressed extracts to lock in maximum vitamins and antioxidants.',
     details: ['Sea Buckthorn', 'Raspberry', 'Rosehip', 'Ginger', 'Cinnamon', 'Black Currant'],
   },
   {
-    icon: '🔬',
+    icon: 'microscope' as const,
     title: 'Cold-Blending Process',
     desc: 'Unlike traditional manufacturing, we never heat our concentrates above 40°C. This cold-blending technique preserves the delicate vitamins, enzymes, and probiotics that heat would destroy.',
     details: ['Below 40°C', 'Enzyme-Safe', 'Vitamin Preserved', 'No Pasteurization'],
   },
   {
-    icon: '🫙',
+    icon: 'jar' as const,
     title: 'Thick Concentrate Infusion',
     desc: 'Apple pectin is added as a natural thickener, creating that signature dense, jam-like texture. This thick format keeps nutrients stable far longer than dry powders.',
     details: ['Apple Pectin Binder', 'Jam-like Texture', 'Extended Shelf Life', 'Superior Absorption'],
   },
   {
-    icon: '📦',
+    icon: 'package' as const,
     title: 'Sealed Stick Packing',
     desc: 'Each dose is portioned into individual stick packs, nitrogen-flushed to prevent oxidation, and sealed for maximum freshness. Just tear, pour, and drink.',
     details: ['Single-Dose Portions', 'Nitrogen-Flushed', 'Tear-Open Design', 'Travel-Ready'],
@@ -42,17 +43,17 @@ const STEPS = [
 
 const QUALITY = [
   {
-    icon: '🧪',
+    icon: 'lab' as const,
     title: 'Lab-Tested',
     desc: 'Every batch undergoes third-party testing for purity, potency, and contaminants.',
   },
   {
-    icon: '🚫',
+    icon: 'ban' as const,
     title: 'No Additives',
     desc: 'Zero artificial colours, flavours, preservatives, or sweeteners. Just nature.',
   },
   {
-    icon: '🌱',
+    icon: 'plant' as const,
     title: 'Sustainably Sourced',
     desc: 'We support local beekeepers and use sustainable farming partners for all berries and herbs.',
   },
@@ -76,7 +77,9 @@ export default function FormulaPage() {
             <div className={styles.timelineStep} key={i}>
               <div className={styles.timelineDot}>{i + 1}</div>
               <div className={`glass-card ${styles.timelineCard}`}>
-                <div className={styles.timelineIcon}>{step.icon}</div>
+                <div className={styles.timelineIcon}>
+                  <Icon name={step.icon} size={32} color="var(--color-gold)" />
+                </div>
                 <h3 className={styles.timelineTitle}>{step.title}</h3>
                 <p className={styles.timelineDesc}>{step.desc}</p>
                 <div className={styles.timelineDetails}>
@@ -98,7 +101,9 @@ export default function FormulaPage() {
           <div className={styles.qualityGrid}>
             {QUALITY.map((q, i) => (
               <div className={`glass-card ${styles.qualityCard}`} key={i}>
-                <div className={styles.qualityIcon}>{q.icon}</div>
+                <div className={styles.qualityIcon}>
+                  <Icon name={q.icon} size={32} color="var(--color-gold)" />
+                </div>
                 <h3 className={styles.qualityTitle}>{q.title}</h3>
                 <p className={styles.qualityDesc}>{q.desc}</p>
               </div>

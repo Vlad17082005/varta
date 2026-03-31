@@ -9,9 +9,11 @@
 
 .headerSub {
   color: var(--color-text-secondary);
-  font-size: 1.05rem;
+  font-size: 1rem;
   max-width: 600px;
   margin: 0 auto;
+  font-weight: 300;
+  line-height: 1.7;
 }
 
 /* Story section */
@@ -25,23 +27,23 @@
 
 .storyContent h2 {
   font-family: var(--font-display);
-  font-size: 2rem;
-  font-weight: 700;
+  font-size: 1.8rem;
+  font-weight: 400;
+  font-style: italic;
   margin-bottom: var(--space-lg);
+  color: var(--color-text);
 }
 
 .storyContent h2 span {
-  background: var(--gradient-gold);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  color: var(--color-gold);
 }
 
 .storyContent p {
   color: var(--color-text-secondary);
   line-height: 1.8;
   margin-bottom: var(--space-md);
-  font-size: 0.95rem;
+  font-size: 0.92rem;
+  font-weight: 300;
 }
 
 .storyVisual {
@@ -54,15 +56,15 @@
   width: 100%;
   max-width: 400px;
   aspect-ratio: 1;
-  border-radius: var(--radius-xl);
-  background: var(--gradient-card);
+  border-radius: var(--radius-lg);
+  background: rgba(180,140,90,0.03);
   border: 1px solid var(--color-border);
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   gap: var(--space-md);
-  font-size: 4rem;
+  font-size: 3.5rem;
   position: relative;
   overflow: hidden;
 }
@@ -74,22 +76,25 @@
   height: 200px;
   border-radius: 50%;
   background: var(--color-gold);
-  filter: blur(80px);
-  opacity: 0.1;
+  filter: blur(100px);
+  opacity: 0.06;
 }
 
 .storyGraphicText {
   font-family: var(--font-display);
-  font-size: 1.4rem;
-  font-weight: 700;
+  font-size: 1.3rem;
+  font-weight: 400;
+  font-style: italic;
   color: var(--color-gold);
   position: relative;
 }
 
 .storyGraphicSub {
-  font-size: 0.85rem;
+  font-size: 0.82rem;
   color: var(--color-text-secondary);
   position: relative;
+  font-weight: 300;
+  letter-spacing: 0.04em;
 }
 
 /* Values */
@@ -97,6 +102,8 @@
   background: var(--color-bg-alt);
   padding: var(--space-4xl) 0;
   margin-bottom: var(--space-4xl);
+  border-top: 1px solid var(--color-border);
+  border-bottom: 1px solid var(--color-border);
 }
 
 .valuesGrid {
@@ -111,21 +118,24 @@
 }
 
 .valueIcon {
-  font-size: 2.2rem;
+  font-size: 2rem;
   margin-bottom: var(--space-md);
 }
 
 .valueTitle {
   font-family: var(--font-display);
   font-size: 1.05rem;
-  font-weight: 700;
+  font-weight: 400;
+  font-style: italic;
   margin-bottom: var(--space-sm);
+  color: var(--color-gold-light);
 }
 
 .valueDesc {
-  font-size: 0.85rem;
+  font-size: 0.83rem;
   color: var(--color-text-secondary);
-  line-height: 1.6;
+  line-height: 1.7;
+  font-weight: 300;
 }
 
 /* Mission */
@@ -137,24 +147,22 @@
 
 .missionQuote {
   font-family: var(--font-display);
-  font-size: clamp(1.3rem, 3vw, 1.8rem);
-  font-weight: 600;
-  line-height: 1.5;
+  font-size: clamp(1.2rem, 3vw, 1.7rem);
+  font-weight: 400;
+  line-height: 1.6;
   font-style: italic;
   color: var(--color-text);
   margin-bottom: var(--space-lg);
 }
 
 .missionQuote span {
-  background: var(--gradient-gold);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  color: var(--color-gold);
 }
 
 .missionAttr {
   color: var(--color-text-muted);
-  font-size: 0.9rem;
+  font-size: 0.85rem;
+  font-weight: 300;
 }
 
 /* Digital tools */
@@ -173,21 +181,24 @@
 }
 
 .digitalIcon {
-  font-size: 2rem;
+  font-size: 1.8rem;
   margin-bottom: var(--space-md);
 }
 
 .digitalTitle {
   font-family: var(--font-display);
-  font-size: 1.1rem;
-  font-weight: 700;
+  font-size: 1.05rem;
+  font-weight: 400;
+  font-style: italic;
   margin-bottom: var(--space-sm);
+  color: var(--color-gold-light);
 }
 
 .digitalDesc {
-  font-size: 0.88rem;
+  font-size: 0.85rem;
   color: var(--color-text-secondary);
-  line-height: 1.6;
+  line-height: 1.7;
+  font-weight: 300;
 }
 
 @media (max-width: 768px) {

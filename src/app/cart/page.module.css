@@ -9,19 +9,22 @@
 
 .header h1 {
   font-family: var(--font-display);
-  font-size: 2rem;
-  font-weight: 700;
+  font-size: 1.8rem;
+  font-weight: 400;
+  font-style: italic;
   margin-bottom: var(--space-xs);
+  color: var(--color-gold);
 }
 
 .itemCount {
   color: var(--color-text-muted);
-  font-size: 0.9rem;
+  font-size: 0.85rem;
+  font-weight: 300;
 }
 
 .layout {
   display: grid;
-  grid-template-columns: 1fr 380px;
+  grid-template-columns: 1fr 360px;
   gap: var(--space-2xl);
   align-items: flex-start;
 }
@@ -41,15 +44,15 @@
 }
 
 .itemEmoji {
-  width: 64px;
-  height: 64px;
-  border-radius: var(--radius-md);
-  background: var(--color-bg-card);
+  width: 56px;
+  height: 56px;
+  border-radius: var(--radius-sm);
+  background: rgba(180,140,90,0.04);
   border: 1px solid var(--color-border);
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.8rem;
+  font-size: 1.6rem;
   flex-shrink: 0;
 }
 
@@ -59,14 +62,15 @@
 }
 
 .itemName {
-  font-weight: 600;
-  font-size: 1rem;
+  font-weight: 500;
+  font-size: 0.95rem;
   margin-bottom: 2px;
 }
 
 .itemTagline {
-  font-size: 0.8rem;
+  font-size: 0.75rem;
   color: var(--color-text-muted);
+  font-weight: 300;
 }
 
 .itemControls {
@@ -85,30 +89,31 @@
 }
 
 .qtyBtn {
-  width: 32px;
-  height: 32px;
+  width: 30px;
+  height: 30px;
   display: flex;
   align-items: center;
   justify-content: center;
-  background: var(--color-bg-card);
-  color: var(--color-text);
-  font-size: 1rem;
-  font-weight: 600;
+  background: rgba(180,140,90,0.03);
+  color: var(--color-text-secondary);
+  font-size: 0.9rem;
+  font-weight: 400;
   transition: background var(--duration-fast);
 }
 
 .qtyBtn:hover {
-  background: rgba(255,193,68,0.1);
+  background: rgba(180,140,90,0.08);
+  color: var(--color-text);
 }
 
 .qtyVal {
-  width: 36px;
-  height: 32px;
+  width: 34px;
+  height: 30px;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 0.9rem;
-  font-weight: 600;
+  font-size: 0.85rem;
+  font-weight: 500;
   background: var(--color-bg);
   border-left: 1px solid var(--color-border);
   border-right: 1px solid var(--color-border);
@@ -116,15 +121,16 @@
 
 .itemPrice {
   font-family: var(--font-display);
-  font-weight: 700;
-  font-size: 1.05rem;
-  min-width: 60px;
+  font-weight: 400;
+  font-size: 1rem;
+  min-width: 55px;
   text-align: right;
+  color: var(--color-gold);
 }
 
 .removeBtn {
   color: var(--color-text-muted);
-  font-size: 1.1rem;
+  font-size: 1rem;
   padding: var(--space-xs);
   transition: color var(--duration-fast);
 }
@@ -142,30 +148,34 @@
 
 .summaryTitle {
   font-family: var(--font-display);
-  font-size: 1.2rem;
-  font-weight: 700;
+  font-size: 1.15rem;
+  font-weight: 400;
+  font-style: italic;
   margin-bottom: var(--space-lg);
   padding-bottom: var(--space-md);
   border-bottom: 1px solid var(--color-border);
+  color: var(--color-gold-light);
 }
 
 .summaryRow {
   display: flex;
   justify-content: space-between;
-  font-size: 0.9rem;
+  font-size: 0.85rem;
   color: var(--color-text-secondary);
   margin-bottom: var(--space-sm);
+  font-weight: 300;
 }
 
 .summaryTotal {
   display: flex;
   justify-content: space-between;
   font-family: var(--font-display);
-  font-size: 1.3rem;
-  font-weight: 700;
+  font-size: 1.2rem;
+  font-weight: 400;
   margin-top: var(--space-md);
   padding-top: var(--space-md);
   border-top: 1px solid var(--color-border);
+  color: var(--color-gold);
 }
 
 .checkoutBtn {
@@ -173,23 +183,24 @@
   align-items: center;
   justify-content: center;
   gap: var(--space-sm);
-  border-radius: var(--radius-full);
-  font-weight: 600;
-  letter-spacing: 0.01em;
+  border-radius: var(--radius-sm);
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
   transition: all var(--duration-normal) var(--ease-out);
   white-space: nowrap;
   background: var(--gradient-gold);
-  color: #0c0a09;
-  box-shadow: 0 4px 20px rgba(255,193,68,0.3);
+  color: #060606;
+  box-shadow: 0 4px 20px rgba(180,140,90,0.15);
   width: 100%;
   margin-top: var(--space-lg);
-  padding: 0.9rem;
-  font-size: 1rem;
+  padding: 0.8rem;
+  font-size: 0.85rem;
 }
 
 .checkoutBtn:hover {
   transform: translateY(-2px);
-  box-shadow: 0 8px 30px rgba(255,193,68,0.45);
+  box-shadow: 0 8px 30px rgba(180,140,90,0.3);
 }
 
 .clearBtn {
@@ -197,8 +208,9 @@
   text-align: center;
   margin-top: var(--space-md);
   color: var(--color-text-muted);
-  font-size: 0.82rem;
+  font-size: 0.78rem;
   transition: color var(--duration-fast);
+  font-weight: 300;
 }
 
 .clearBtn:hover {
@@ -212,21 +224,24 @@
 }
 
 .emptyIcon {
-  font-size: 4rem;
+  font-size: 3.5rem;
   margin-bottom: var(--space-lg);
-  opacity: 0.5;
+  opacity: 0.4;
 }
 
 .emptyTitle {
   font-family: var(--font-display);
-  font-size: 1.5rem;
-  font-weight: 700;
+  font-size: 1.4rem;
+  font-weight: 400;
+  font-style: italic;
   margin-bottom: var(--space-sm);
+  color: var(--color-gold-light);
 }
 
 .emptySub {
   color: var(--color-text-secondary);
   margin-bottom: var(--space-xl);
+  font-weight: 300;
 }
 
 @media (max-width: 768px) {

@@ -1,5 +1,6 @@
 'use client';
 
+import Image from 'next/image';
 import { useCart } from '@/context/CartContext';
 import type { Product } from '@/data/products';
 import styles from './page.module.css';
@@ -23,7 +24,15 @@ export default function ProductsClient({ products }: { products: Product[] }) {
       {products.map((product) => (
         <div className={`glass-card ${styles.productDetail}`} key={product.id} id={product.id}>
           <div className={styles.productGlow} style={{ background: product.color }} />
-          <div className={styles.productEmoji}>{product.emoji}</div>
+          <div className={styles.productImage}>
+            <Image
+              src={`/products/${product.id}.png`}
+              alt={product.name}
+              width={120}
+              height={120}
+              style={{ objectFit: 'cover', borderRadius: 'var(--radius-sm)' }}
+            />
+          </div>
           <h3 className={styles.productName}>{product.name}</h3>
           <div className={styles.productTagline} style={{ color: product.color }}>
             {product.tagline}

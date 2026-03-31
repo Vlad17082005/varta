@@ -9,9 +9,11 @@
 
 .headerSub {
   color: var(--color-text-secondary);
-  font-size: 1.05rem;
+  font-size: 1rem;
   max-width: 600px;
   margin: 0 auto;
+  font-weight: 300;
+  line-height: 1.7;
 }
 
 /* Timeline */
@@ -27,8 +29,9 @@
   left: 32px;
   top: 0;
   bottom: 0;
-  width: 2px;
-  background: linear-gradient(to bottom, var(--color-gold), var(--color-honey), transparent);
+  width: 1px;
+  background: linear-gradient(to bottom, var(--color-gold), var(--color-gold-dark), transparent);
+  opacity: 0.4;
 }
 
 .timelineStep {
@@ -43,20 +46,20 @@
 
 .timelineDot {
   position: absolute;
-  left: 18px;
+  left: 20px;
   top: 4px;
-  width: 30px;
-  height: 30px;
+  width: 26px;
+  height: 26px;
   border-radius: var(--radius-full);
-  background: var(--gradient-gold);
+  background: var(--color-gold);
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 0.75rem;
+  font-size: 0.7rem;
   font-weight: 700;
-  color: #0c0a09;
+  color: #060606;
   z-index: 1;
-  box-shadow: 0 0 20px rgba(255,193,68, 0.3);
+  box-shadow: 0 0 15px rgba(180,140,90, 0.2);
 }
 
 .timelineCard {
@@ -64,21 +67,24 @@
 }
 
 .timelineIcon {
-  font-size: 2.2rem;
+  font-size: 2rem;
   margin-bottom: var(--space-md);
 }
 
 .timelineTitle {
   font-family: var(--font-display);
-  font-size: 1.3rem;
-  font-weight: 700;
+  font-size: 1.25rem;
+  font-weight: 400;
+  font-style: italic;
   margin-bottom: var(--space-sm);
+  color: var(--color-gold-light);
 }
 
 .timelineDesc {
-  font-size: 0.92rem;
+  font-size: 0.9rem;
   color: var(--color-text-secondary);
   line-height: 1.7;
+  font-weight: 300;
 }
 
 .timelineDetails {
@@ -89,13 +95,14 @@
 }
 
 .timelineDetails span {
-  padding: 0.3rem 0.75rem;
-  border-radius: var(--radius-full);
-  font-size: 0.78rem;
-  font-weight: 500;
-  background: rgba(255,193,68,0.08);
+  padding: 0.25rem 0.65rem;
+  border-radius: var(--radius-sm);
+  font-size: 0.72rem;
+  font-weight: 400;
+  background: rgba(180,140,90,0.05);
   border: 1px solid var(--color-border);
   color: var(--color-gold-light);
+  letter-spacing: 0.02em;
 }
 
 /* Quality section */
@@ -116,21 +123,24 @@
 }
 
 .qualityIcon {
-  font-size: 2.5rem;
+  font-size: 2.2rem;
   margin-bottom: var(--space-md);
 }
 
 .qualityTitle {
   font-family: var(--font-display);
-  font-size: 1.1rem;
-  font-weight: 700;
+  font-size: 1.05rem;
+  font-weight: 400;
+  font-style: italic;
   margin-bottom: var(--space-sm);
+  color: var(--color-gold-light);
 }
 
 .qualityDesc {
-  font-size: 0.85rem;
+  font-size: 0.83rem;
   color: var(--color-text-secondary);
-  line-height: 1.6;
+  line-height: 1.7;
+  font-weight: 300;
 }
 
 /* Comparison */
@@ -138,6 +148,8 @@
   margin-top: var(--space-4xl);
   background: var(--color-bg-alt);
   padding: var(--space-3xl) 0;
+  border-top: 1px solid var(--color-border);
+  border-bottom: 1px solid var(--color-border);
 }
 
 .compTable {
@@ -154,25 +166,26 @@
   padding: var(--space-md) var(--space-lg);
   text-align: left;
   border-bottom: 1px solid var(--color-border);
-  font-size: 0.9rem;
+  font-size: 0.85rem;
+  font-weight: 300;
 }
 
 .compTable th {
   color: var(--color-gold);
-  font-weight: 600;
+  font-weight: 500;
   text-transform: uppercase;
-  letter-spacing: 0.04em;
-  font-size: 0.8rem;
+  letter-spacing: 0.08em;
+  font-size: 0.72rem;
 }
 
 .compTable td:first-child {
   color: var(--color-text-secondary);
-  font-weight: 500;
+  font-weight: 400;
 }
 
 .compHighlight {
   color: var(--color-gold) !important;
-  font-weight: 600 !important;
+  font-weight: 500 !important;
 }
 
 @media (max-width: 768px) {
@@ -185,7 +198,7 @@
   }
 
   .timelineDot {
-    left: 6px;
+    left: 8px;
   }
 
   .timelineStep {

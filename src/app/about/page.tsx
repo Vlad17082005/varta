@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import Icon from '@/components/Icon';
 import styles from './page.module.css';
 
 export const metadata: Metadata = {
@@ -43,7 +44,7 @@ export default function AboutPage() {
           </div>
           <div className={styles.storyVisual}>
             <div className={styles.storyGraphic}>
-              🍯
+              <Icon name="honey" size={64} color="var(--color-gold)" />
               <span className={styles.storyGraphicText}>
                 Instant Shield.
               </span>
@@ -65,28 +66,30 @@ export default function AboutPage() {
           <div className={styles.valuesGrid}>
             {[
               {
-                icon: '🌿',
+                icon: 'eye' as const,
                 title: 'Radical Transparency',
                 desc: 'Every ingredient on our label is something you can actually pronounce. No "natural flavourings" hiding synthetic junk.',
               },
               {
-                icon: '🔬',
+                icon: 'microscope' as const,
                 title: 'Science-Backed',
                 desc: 'Our blends are designed with nutritionists to maximise bioavailability and immune support.',
               },
               {
-                icon: '🤝',
+                icon: 'handshake' as const,
                 title: 'Community First',
                 desc: 'We partner with local beekeepers and farmers, ensuring fair prices and sustainable practices.',
               },
               {
-                icon: '🎯',
+                icon: 'target' as const,
                 title: 'Accessible Wellness',
                 desc: 'Premium nutrition shouldn\'t be a luxury. Our $3.49 sticks make daily wellness affordable for everyone.',
               },
             ].map((v, i) => (
               <div className={`glass-card ${styles.valueCard}`} key={i}>
-                <div className={styles.valueIcon}>{v.icon}</div>
+                <div className={styles.valueIcon}>
+                  <Icon name={v.icon} size={32} color="var(--color-gold)" />
+                </div>
                 <h3 className={styles.valueTitle}>{v.title}</h3>
                 <p className={styles.valueDesc}>{v.desc}</p>
               </div>
@@ -114,7 +117,9 @@ export default function AboutPage() {
 
           <div className={styles.digitalGrid}>
             <div className={`glass-card ${styles.digitalCard}`}>
-              <div className={styles.digitalIcon}>📱</div>
+              <div className={styles.digitalIcon}>
+                <Icon name="phone" size={28} color="var(--color-gold)" />
+              </div>
               <h3 className={styles.digitalTitle}>QR Code on Every Stick</h3>
               <p className={styles.digitalDesc}>
                 Scan the QR code on any DailyBoost stick to unlock exclusive
@@ -123,7 +128,9 @@ export default function AboutPage() {
               </p>
             </div>
             <div className={`glass-card ${styles.digitalCard}`}>
-              <div className={styles.digitalIcon}>🎬</div>
+              <div className={styles.digitalIcon}>
+                <Icon name="video" size={28} color="var(--color-gold)" />
+              </div>
               <h3 className={styles.digitalTitle}>TikTok &amp; Reels</h3>
               <p className={styles.digitalDesc}>
                 Follow us for quick lifehack content — boosting energy during
